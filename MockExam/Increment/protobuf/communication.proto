@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package communication;
+option go_package = "http://exam;protobuf";
+
+service Increment{
+    rpc NewNode (NewNodeRequest) returns (NewNodeReply) {}
+    rpc NewIncrement (NewIncrementRequest) returns (NewIncrementReply) {}
+    rpc NewUpdateNumbers (NewUpdateNumbersRequest) returns (NewUpdateNumbersReply) {}
+}
+
+message NewNodeRequest {}
+
+message NewNodeReply {}
+
+message NewIncrementRequest {}
+
+message NewIncrementReply {
+    int64 answer = 1;
+}
+
+message NewUpdateNumbersRequest {
+    int64 updatedNumber = 1;
+}
+
+message NewUpdateNumbersReply {}
